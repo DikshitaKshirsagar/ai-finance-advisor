@@ -1,6 +1,8 @@
 package com.financeadvisor.backend.controller;
 
+import com.financeadvisor.backend.dto.CategoryBreakdownResponse;
 import com.financeadvisor.backend.dto.DashboardResponse;
+import com.financeadvisor.backend.dto.InsightResponse;
 import com.financeadvisor.backend.service.DashboardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,22 @@ public class DashboardController {
                                                              @RequestParam Integer month,
                                                              @RequestParam Integer year) {
         DashboardResponse response = dashboardService.getDashboard(authentication.getName(), month, year);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/insight")
+    public ResponseEntity<InsightResponse> getInsight(Authentication authentication,
+                                                         @RequestParam Integer month,
+                                                         @RequestParam Integer year) {
+        InsightResponse response = dashboardService.getInsight(authentication.getName(), month, year);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/category-breakdown")
+    public ResponseEntity<CategoryBreakdownResponse> getCategoryBreakdown(Authentication authentication,
+                                                                             @RequestParam Integer month,
+                                                                             @RequestParam Integer year) {
+        CategoryBreakdownResponse response = dashboardService.getCategoryBreakdown(authentication.getName(), month, year);
         return ResponseEntity.ok(response);
     }
 }

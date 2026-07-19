@@ -6,6 +6,7 @@ import ExpensesPage from "./pages/ExpensesPage";
 import IncomesPage from "./pages/IncomesPage";
 import BudgetsPage from "./pages/BudgetsPage";
 import SavingsGoalsPage from "./pages/SavingsGoalsPage";
+import ChatPage from "./pages/ChatPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/incomes" element={<ProtectedRoute><IncomesPage /></ProtectedRoute>} />
         <Route path="/budgets" element={<ProtectedRoute><BudgetsPage /></ProtectedRoute>} />
         <Route path="/savings-goals" element={<ProtectedRoute><SavingsGoalsPage /></ProtectedRoute>} />
+        <Route path="/chat" element={<ProtectedRoute><ChatPage /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   );

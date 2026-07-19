@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <nav className="bg-white shadow-sm mb-6">
-      <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center flex-wrap gap-2">
         <div className="flex items-center gap-1 flex-wrap">
           <span className="font-bold text-purple-600 mr-4">FinanceAdvisor</span>
           <Link to="/dashboard" className={linkClass("/dashboard")}>Dashboard</Link>
@@ -25,6 +25,7 @@ function Navbar() {
           <Link to="/incomes" className={linkClass("/incomes")}>Income</Link>
           <Link to="/budgets" className={linkClass("/budgets")}>Budgets</Link>
           <Link to="/savings-goals" className={linkClass("/savings-goals")}>Goals</Link>
+          <Link to="/chat" className={linkClass("/chat")}>✨ AI Chat</Link>
         </div>
         <button
           onClick={handleLogout}
