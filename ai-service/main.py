@@ -10,9 +10,11 @@ load_dotenv()
 
 app = FastAPI(title="Finance Advisor AI Service")
 
+allowed_origin = os.getenv("BACKEND_URL", "http://localhost:8080")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"],
+    allow_origins=[allowed_origin],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
